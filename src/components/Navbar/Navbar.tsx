@@ -1,5 +1,5 @@
 import React from 'react'
-import { LogoContainer, MainLogo, Nav, NavItem, NavItems, StyledLink } from './NavbarStyle'
+import { CartButton, LogoContainer, MainLogo, Nav, NavItem, NavItems, ProfileButton, ProfileContainer, StyledLink } from './NavbarStyle'
 
 export const Navbar = () => {
     return (
@@ -25,6 +25,10 @@ export const Navbar = () => {
                         <StyledLink to="/contact" >Contact</StyledLink>
                     </NavItem>
                 </NavItems>
+                <ProfileContainer>
+                    <CartButton />
+                    <ProfileButton src={require('./../../assets/images/image-avatar.png')}  width={35} height={35}/>
+                </ProfileContainer>
             </Nav>
         </div>
     )

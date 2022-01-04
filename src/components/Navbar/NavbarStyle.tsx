@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Logo } from './../../assets/logo/logo.svg';
+import { ReactComponent as CartLogo } from './../../assets/icons/icon-cart.svg';
 
 export const Nav = styled.nav`
     display: flex;
@@ -41,3 +42,18 @@ export const StyledLink = styled(Link)`
         opacity: 1;
     }
 `
+
+/* Cart and Profile */
+
+export const ProfileContainer = styled.div`
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+`
+
+export const CartButton = styled(CartLogo)`
+    margin-right: 25px;
+`
+
+export const ProfileButton = styled.img``
