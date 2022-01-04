@@ -14,7 +14,8 @@ declare module 'styled-components' {
             normal: string,
             light: string,
             lightest: string
-        }
+        },
+        text: string
     },
     fontSize: {
         small: string,

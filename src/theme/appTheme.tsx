@@ -14,7 +14,8 @@ const mainTheme = {
             normal: 'hsl(219, 9%, 45%)',
             light: 'hsl(220, 14%, 75%)',
             lightest: 'hsl(223, 64%, 98%)'
-        }
+        },
+        text: 'black'
     },
     fontSize: {
         small: '16px',
@@ -25,7 +26,7 @@ const mainTheme = {
         light: 'KumbhSansLight',
         normal: 'KumbhSansRegular',
         bold: 'KumbhSansBold'
-    }
+    },
 }
 
 export const MainTheme: React.FC = ({ children }) => (
