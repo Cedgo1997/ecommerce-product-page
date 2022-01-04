@@ -6,10 +6,11 @@ import { AboutScreen } from "../screens/About/AboutScreen";
 import { ContactScreen } from "../screens/Contact/ContactScreen";
 import { ProductScreen } from "../screens/Product/ProductScreen";
 import { ProductsScreen } from "../screens/Products/ProductsScreen";
+import { MainWrapper } from "./AppRouterStyle";
 
 export const AppRouter = () => {
     return (
-        <div>
+        <MainWrapper>
             <Navbar />
             <Routes>
                 <Route path="/" element={<App />} />
@@ -19,6 +20,6 @@ export const AppRouter = () => {
                 <Route path="/about" element={<AboutScreen />} />
                 <Route path="/contact" element={<ContactScreen />} />
             </Routes>
-        </div>
+        </MainWrapper>
     );
 }
