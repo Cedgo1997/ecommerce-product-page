@@ -1,10 +1,13 @@
 import React from 'react'
-import { Nav, NavItem, NavItems, StyledLink } from './NavbarStyle'
+import { LogoContainer, MainLogo, Nav, NavItem, NavItems, StyledLink } from './NavbarStyle'
 
 export const Navbar = () => {
     return (
         <div>
             <Nav>
+                <LogoContainer>
+                    <MainLogo />
+                </LogoContainer>
                 <NavItems>
                     <NavItem>
                         <StyledLink to="/collections" >Collections</StyledLink>

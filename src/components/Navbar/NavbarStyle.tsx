@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { ReactComponent as Logo } from './../../assets/logo/logo.svg';
 
 export const Nav = styled.nav`
-
+    display: flex;
+    height: 65px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
 `
+
+/* Nav logo */
+
+export const LogoContainer = styled.div`
+    margin-top: 15px;
+`
+
+export const MainLogo = styled(Logo)`
+`
+
+/* Nav links */
 export const NavItems = styled.ul`
     display: flex;
-    height: 50px;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
 `
 
 export const NavItem = styled.li`
