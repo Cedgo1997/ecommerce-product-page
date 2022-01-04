@@ -18,9 +18,9 @@ const mainTheme = {
         text: 'black'
     },
     fontSize: {
-        small: '16px',
-        normal: '18px',
-        large: '20px'
+        small: '14px',
+        normal: '16px',
+        large: '18px'
     },
     fontFamily: {
         light: 'KumbhSansLight',
