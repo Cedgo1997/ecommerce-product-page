@@ -54,6 +54,17 @@ export const ProfileContainer = styled.div`
 
 export const CartButton = styled(CartLogo)`
     margin-right: 25px;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
 `
 
-export const ProfileButton = styled.img``
+export const ProfileButton = styled.img`
+    border-radius: 50%;
+    &:hover {
+        outline: ${({ theme }) => theme.colors.primary.dark} solid 2px;
+        cursor: pointer;
+    }
+`
