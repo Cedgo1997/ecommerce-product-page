@@ -1,10 +1,12 @@
 import React from 'react'
+import { Cart } from '../Cart/Cart'
 import { CartButton, LogoContainer, MainLogo, Nav, NavItem, NavItems, ProfileButton, ProfileContainer, StyledLink } from './NavbarStyle'
 
 export const Navbar = () => {
     return (
-        <div>
+        <>
             <Nav>
+                <Cart />
                 <LogoContainer>
                     <MainLogo />
                 </LogoContainer>
@@ -27,9 +29,9 @@ export const Navbar = () => {
                 </NavItems>
                 <ProfileContainer>
                     <CartButton />
-                    <ProfileButton src={require('./../../assets/images/image-avatar.png')}  width={35} height={35}/>
+                    <ProfileButton src={require('./../../assets/images/image-avatar.png')} width={35} height={35} />
                 </ProfileContainer>
             </Nav>
-        </div>
+        </>
     )
 }
