@@ -29,7 +29,7 @@ export const ProductThumbnail = styled.img`
 
 /* PRODUCT DATA */
 export const DataContainer = styled.div`
-    padding-right: 10%;
+    padding-right: 20%;
     margin-top: 10%;
 `
 
@@ -76,7 +76,7 @@ export const PreviousPrice = styled.p`
     text-decoration: line-through;
 `
 
-/* Add Button and item quantity */
+/* ADD BUTTON AND ITEM QUANTITY */
 
 export const ButtonsContainer = styled.div`
     display: flex;
@@ -88,10 +88,10 @@ export const AddButton = styled.div`
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 5px;
     border: none;
+    box-shadow: 0px 5px 15px 0px ${({theme}) => theme.colors.primary.dark};
     display: flex;
     justify-content: center;
     width: 60%;
-    
     &:hover {
         opacity: 0.8;
         cursor: pointer;

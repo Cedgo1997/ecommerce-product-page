@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AddButton, BrandName, ButtonsContainer, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton } from './ProductScreenStyle'
 
-export const ProductScreen = () => {
+export const ProductScreen: React.FC = () => {
 
     const [quantity, setQuantity] = useState(0);
 
