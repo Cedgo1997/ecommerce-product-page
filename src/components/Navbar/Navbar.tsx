@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Cart } from '../Cart/Cart'
 import { CartButton, LogoContainer, MainLogo, Nav, NavItem, NavItems, ProfileButton, ProfileContainer, StyledLink } from './NavbarStyle'
 
 export const Navbar = () => {
+
+    const [showCart, setShowCart] = useState(false);
+
     return (
         <>
             <Nav>
-                <Cart />
+                {showCart && (<Cart />)}
                 <LogoContainer>
                     <MainLogo />
                 </LogoContainer>
@@ -28,7 +31,7 @@ export const Navbar = () => {
                     </NavItem>
                 </NavItems>
                 <ProfileContainer>
-                    <CartButton />
+                    <CartButton onClick={() => setShowCart(!showCart)} />
                     <ProfileButton src={require('./../../assets/images/image-avatar.png')} width={35} height={35} />
                 </ProfileContainer>
             </Nav>
