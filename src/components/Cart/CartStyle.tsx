@@ -19,6 +19,8 @@ export const Title = styled.h5`
 
 export const NoOrders = styled.div`
     border-top: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
     & > p {
         font-size: ${({theme}) => theme.fontSize.small};
         font-family: ${({theme}) => theme.fontFamily.bold};
