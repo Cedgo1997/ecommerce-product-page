@@ -52,7 +52,7 @@ export const ProfileContainer = styled.div`
     justify-content: center;
 `
 
-export const Button = styled.button`
+const Button = styled.button`
     background: none;
     border: none;
     margin-right: 25px;

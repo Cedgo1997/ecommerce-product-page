@@ -41,10 +41,7 @@ export const ProductScreen: React.FC = () => {
                             <p className="number">{quantity}</p>
                             <p className="sign" onClick={() => setQuantity(quantity + 1)}>+</p>
                         </QuantityButton>
-                        <AddButton>
-                            <CartIcon />
-                            <p>Add to cart</p>
-                        </AddButton>
+                        <AddButton text='Add to cart'/>
                     </ButtonsContainer>
                 </DataContainer>
             </div>

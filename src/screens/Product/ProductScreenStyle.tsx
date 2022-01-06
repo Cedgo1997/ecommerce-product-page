@@ -84,11 +84,11 @@ export const ButtonsContainer = styled.div`
     margin-top: 30px;
 `
 
-export const AddButton = styled.div`
+const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 5px;
     border: none;
-    box-shadow: 0px 5px 15px 0px ${({theme}) => theme.colors.primary.dark};
+    box-shadow: 0px 5px 15px 0px ${({ theme }) => theme.colors.primary.dark};
     display: flex;
     justify-content: center;
     width: 60%;
@@ -96,19 +96,25 @@ export const AddButton = styled.div`
         opacity: 0.8;
         cursor: pointer;
     }
-
     & > p {
         color: white;
         font-family: ${({ theme }) => theme.fontFamily.bold};
         margin: 10px 0 10px 0;
     }
 `
-
 export const CartIcon = styled(CartLogo)`
     fill: white;
     align-self: center;
     padding-right: 2%;
 `
+
+export const AddButton = ({ text }: any) => (
+    <Button>
+        <CartIcon />
+        <p>{text}</p>
+    </Button>
+)
+
 
 export const QuantityButton = styled.div`
     border-radius: 5px;
