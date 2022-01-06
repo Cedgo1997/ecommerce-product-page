@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddButton, BrandName, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle } from './ProductScreenStyle'
+import { AddButton, BrandName, ButtonsContainer, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton } from './ProductScreenStyle'
 
 export const ProductScreen = () => {
     return (
@@ -31,12 +31,19 @@ export const ProductScreen = () => {
                     </PriceContainer>
                     <PreviousPrice>$250.00</PreviousPrice>
 
-                    <AddButton>
-                        <CartIcon />
-                        <p>Add to Cart</p>
-                    </AddButton>
+                    <ButtonsContainer>
+                        <QuantityButton>
+                            <p className="sign">-</p>
+                            <p className="number">3</p>
+                            <p className="sign">+</p>
+                        </QuantityButton>
+                        <AddButton>
+                            <CartIcon />
+                            <p>Add to cart</p>
+                        </AddButton>
+                    </ButtonsContainer>
                 </DataContainer>
             </div>
-        </ProductContainer>
+        </ProductContainer >
     )
 }
