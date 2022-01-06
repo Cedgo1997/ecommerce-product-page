@@ -93,7 +93,7 @@ const Button = styled.button`
     justify-content: center;
     width: 60%;
     &:hover {
-        opacity: 0.8;
+        opacity: 0.6;
         cursor: pointer;
     }
     & > p {
@@ -116,6 +116,27 @@ export const AddButton = ({ text }: any) => (
 )
 
 
+const SignButton = styled.button`
+    background: none;
+    border: none;
+    color: ${({ theme }) => theme.colors.primary.dark};
+    &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+    & > p {
+        margin: 0;
+        font-family: ${({ theme }) => theme.fontFamily.bold};
+        font-size: ${({ theme }) => theme.fontSize.large};
+    }
+`
+
+export const Sign = ({ text, onClick }: any) => (
+    <SignButton onClick={onClick}>
+        <p>{text}</p>
+    </SignButton>
+)
+
 export const QuantityButton = styled.div`
     border-radius: 5px;
     display: flex;
@@ -124,19 +145,10 @@ export const QuantityButton = styled.div`
     background-color: ${({ theme }) => theme.colors.secondary.lightest};
     padding: 0 15px 0 15px;
     margin: 0 20px 0 0;
-    & > p {
-        font-family: ${({ theme }) => theme.fontFamily.bold};
-        margin: 10px 0 10px 0;
-    }
-    & > .sign {
-        color: ${({ theme }) => theme.colors.primary.dark};
-        font-size: ${({ theme }) => theme.fontSize.large};
-        &:hover {
-            cursor: pointer;
-            opacity: 0.5;
-        }
-    }
+    
     & > .number {
         align-self: center;
+        font-family: ${({ theme }) => theme.fontFamily.bold};
+        margin: 10px 0 10px 0;
     }
 `

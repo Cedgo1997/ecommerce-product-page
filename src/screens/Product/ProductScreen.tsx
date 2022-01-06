@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AddButton, BrandName, ButtonsContainer, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton } from './ProductScreenStyle'
+import { AddButton, BrandName, ButtonsContainer, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
 
 export const ProductScreen: React.FC = () => {
 
@@ -37,9 +37,9 @@ export const ProductScreen: React.FC = () => {
 
                     <ButtonsContainer>
                         <QuantityButton>
-                            <p className="sign" onClick={() => !!quantity && setQuantity(quantity - 1)} >-</p>
+                            <Sign text='-' onClick={() => !!quantity && setQuantity(quantity - 1)} />
                             <p className="number">{quantity}</p>
-                            <p className="sign" onClick={() => setQuantity(quantity + 1)}>+</p>
+                            <Sign text='+' onClick={() => setQuantity(quantity + 1)} />
                         </QuantityButton>
                         <AddButton text='Add to cart'/>
                     </ButtonsContainer>
