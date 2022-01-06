@@ -1,5 +1,5 @@
 import React from 'react'
-import { DataContainer, Image, ProductContainer, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer } from './ProductScreenStyle'
+import { AddButton, BrandName, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle } from './ProductScreenStyle'
 
 export const ProductScreen = () => {
     return (
@@ -17,11 +17,24 @@ export const ProductScreen = () => {
             </div>
             <div>
                 <DataContainer>
-                    <p>SNEAKER COMPANY</p>
-                    <h2>FALL LIMITED SNEAKERS</h2>
-                    <p>These low-profile sneakers are your perfect  casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
-                    <span><strong>$125.00</strong> 50%</span>
-                    <p>$250.00</p>
+
+                    <BrandName>SNEAKER COMPANY</BrandName>
+                    <ProductTitle>FALL LIMITED EDITION SNEAKERS</ProductTitle>
+                    <ProductDescription>
+                        These low-profile sneakers are your perfect  casual wear companion.
+                        Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+                    </ProductDescription>
+
+                    <PriceContainer>
+                        <Price>$125.00</Price>
+                        <DiscountBadge>50%</DiscountBadge>
+                    </PriceContainer>
+                    <PreviousPrice>$250.00</PreviousPrice>
+
+                    <AddButton>
+                        <CartIcon />
+                        <p>Add to Cart</p>
+                    </AddButton>
                 </DataContainer>
             </div>
         </ProductContainer>
