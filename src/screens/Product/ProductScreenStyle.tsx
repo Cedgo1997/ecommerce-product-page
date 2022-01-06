@@ -86,14 +86,20 @@ export const ButtonsContainer = styled.div`
 
 export const AddButton = styled.div`
     background-color: ${({ theme }) => theme.colors.primary.dark};
-    border-radius: 15px;
+    border-radius: 5px;
     border: none;
     display: flex;
     justify-content: center;
     width: 60%;
+    
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
     & > p {
-        font-family: ${({ theme }) => theme.fontFamily.bold};
         color: white;
+        font-family: ${({ theme }) => theme.fontFamily.bold};
         margin: 10px 0 10px 0;
     }
 `
@@ -105,7 +111,7 @@ export const CartIcon = styled(CartLogo)`
 `
 
 export const QuantityButton = styled.div`
-    border-radius: 15px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     width: 20%;
