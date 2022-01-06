@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AddButton, BrandName, ButtonsContainer, CartIcon, DataContainer, DiscountBadge, Image, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton } from './ProductScreenStyle'
 
 export const ProductScreen = () => {
+
+    const [quantity, setQuantity] = useState(0);
+
+
     return (
         <ProductContainer>
             <div>
@@ -33,9 +37,9 @@ export const ProductScreen = () => {
 
                     <ButtonsContainer>
                         <QuantityButton>
-                            <p className="sign">-</p>
-                            <p className="number">3</p>
-                            <p className="sign">+</p>
+                            <p className="sign" onClick={() => !!quantity && setQuantity(quantity - 1)} >-</p>
+                            <p className="number">{quantity}</p>
+                            <p className="sign" onClick={() => setQuantity(quantity + 1)}>+</p>
                         </QuantityButton>
                         <AddButton>
                             <CartIcon />
