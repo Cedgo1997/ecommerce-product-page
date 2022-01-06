@@ -31,7 +31,7 @@ export const Navbar = () => {
                     </NavItem>
                 </NavItems>
                 <ProfileContainer>
-                    <CartButton onClick={() => setShowCart(!showCart)} />
+                    <CartButton  onClick={() => setShowCart(!showCart)}/>
                     <ProfileButton src={require('./../../assets/images/image-avatar.png')} width={35} height={35} />
                 </ProfileContainer>
             </Nav>

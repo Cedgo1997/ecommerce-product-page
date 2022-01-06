@@ -52,7 +52,9 @@ export const ProfileContainer = styled.div`
     justify-content: center;
 `
 
-export const CartButton = styled(CartLogo)`
+export const Button = styled.button`
+    background: none;
+    border: none;
     margin-right: 25px;
     opacity: 0.5;
     &:hover {
@@ -60,6 +62,10 @@ export const CartButton = styled(CartLogo)`
         cursor: pointer;
     }
 `
+
+export const CartButton = ({ onClick }: any) => (
+    <Button onClick={onClick}><CartLogo /></Button>
+);
 
 export const ProfileButton = styled.img`
     border-radius: 50%;
