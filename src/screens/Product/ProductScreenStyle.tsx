@@ -76,16 +76,25 @@ export const PreviousPrice = styled.p`
     text-decoration: line-through;
 `
 
+/* Add Button and item quantity */
+
+export const ButtonsContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+`
+
 export const AddButton = styled.div`
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 15px;
     border: none;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    width: 60%;
     & > p {
         font-family: ${({ theme }) => theme.fontFamily.bold};
         color: white;
+        margin: 10px 0 10px 0;
     }
 `
 
@@ -93,4 +102,29 @@ export const CartIcon = styled(CartLogo)`
     fill: white;
     align-self: center;
     padding-right: 2%;
+`
+
+export const QuantityButton = styled.div`
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    background-color: ${({ theme }) => theme.colors.secondary.lightest};
+    padding: 0 15px 0 15px;
+    margin: 0 20px 0 0;
+    & > p {
+        font-family: ${({ theme }) => theme.fontFamily.bold};
+        margin: 10px 0 10px 0;
+    }
+    & > .sign {
+        color: ${({ theme }) => theme.colors.primary.dark};
+        font-size: ${({ theme }) => theme.fontSize.large};
+        &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+        }
+    }
+    & > .number {
+        align-self: center;
+    }
 `
