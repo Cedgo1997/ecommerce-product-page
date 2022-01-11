@@ -1,29 +1,35 @@
 import styled from "styled-components";
 import { ReactComponent as CartLogo } from './../../assets/icons/icon-cart.svg';
 
-
 /* IMAGES */
 export const ProductContainer = styled.div`
     display: flex;
     margin-top: 5%;
-    margin-left: 5%;
+    width: 100%;
 `
 
-export const ProductImageContainer = styled.div``
+
+export const ProductImageContainer = styled.div`
+`
+
+export const LargeImageContainer = styled.div`
+`
 
 export const Image = styled.img`
-    width: 75%;
-    height: 80%;
+    width: 450px;
+    height: 460px;
     border-radius: 5%;
 `
 
-export const ProductThumbnailContainer = styled.div``
+export const ProductThumbnailContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
 
 export const ProductThumbnail = styled.img`
     border-radius: 10%;
-    width: 15%;
-    height: 15%;
-    margin-right: 5%;
+    width: 85px;
+    height: 85px;
     margin-top: 3%;
 `
 
