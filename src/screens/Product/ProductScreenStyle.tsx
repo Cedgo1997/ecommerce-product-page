@@ -7,24 +7,34 @@ export const ProductContainer = styled.div`
     margin-top: 5%;
     width: 100%;
     justify-content: center;
+
+    @media (max-width: 1150px) {
+        flex-direction: column;
+    }
 `
 
 
 export const ProductImageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const LargeImageContainer = styled.div`
+    width: 450px;
+    height: 460px;
 `
 
 export const Image = styled.img`
-    width: 450px;
-    height: 460px;
+    max-width: 100%;
+    max-height: 100%;
     border-radius: 5%;
 `
 
 export const ProductThumbnailContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    width: 450px;
 `
 
 export const ProductThumbnail = styled.img`
