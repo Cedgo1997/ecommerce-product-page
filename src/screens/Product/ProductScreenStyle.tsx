@@ -77,6 +77,11 @@ export const ProductDescription = styled.p`
 `
 export const PriceContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    @media (max-width: 1150px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 `
 
 export const Price = styled.h2`
@@ -92,6 +97,10 @@ export const DiscountBadge = styled.p`
     font-size: ${({ theme }) => theme.fontSize.small};
     margin: 0 0 0 15px;
     padding: 2px 3px 2px 3px;
+`
+
+export const CurrentPrice = styled.div`
+    display: flex;   
 `
 
 export const PreviousPrice = styled.p`

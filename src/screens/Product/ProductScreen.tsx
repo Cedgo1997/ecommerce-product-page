@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AddButton, BrandName, ButtonsContainer, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
+import { AddButton, BrandName, ButtonsContainer, CurrentPrice, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
 
 export const ProductScreen: React.FC = () => {
 
@@ -28,10 +28,12 @@ export const ProductScreen: React.FC = () => {
                 </ProductDescription>
 
                 <PriceContainer>
-                    <Price>$125.00</Price>
-                    <DiscountBadge>50%</DiscountBadge>
+                    <CurrentPrice>
+                        <Price>$125.00</Price>
+                        <DiscountBadge>50%</DiscountBadge>
+                    </CurrentPrice>
+                    <PreviousPrice>$250.00</PreviousPrice>
                 </PriceContainer>
-                <PreviousPrice>$250.00</PreviousPrice>
 
                 <ButtonsContainer>
                     <QuantityButton>
