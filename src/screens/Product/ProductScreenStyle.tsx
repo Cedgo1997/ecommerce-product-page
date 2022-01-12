@@ -108,6 +108,9 @@ export const ButtonsContainer = styled.div`
     display: flex;
     align-items: center;
     margin-top: 30px;
+    @media (max-width: 1150px) {
+        flex-direction: column;
+    }
 `
 
 const Button = styled.button`
@@ -126,6 +129,10 @@ const Button = styled.button`
         color: white;
         font-family: ${({ theme }) => theme.fontFamily.bold};
         margin: 10px 0 10px 0;
+    }
+
+    @media (max-width: 1150px) {
+        width: 100%;
     }
 `
 export const CartIcon = styled(CartLogo)`
@@ -176,5 +183,10 @@ export const QuantityButton = styled.div`
         align-self: center;
         font-family: ${({ theme }) => theme.fontFamily.bold};
         margin: 10px 0 10px 0;
+    }
+    @media (max-width: 1150px) {
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 0;
     }
 `
