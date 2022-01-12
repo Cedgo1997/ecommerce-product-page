@@ -6,6 +6,7 @@ export const ProductContainer = styled.div`
     display: flex;
     margin-top: 5%;
     width: 100%;
+    justify-content: center;
 `
 
 
@@ -35,8 +36,9 @@ export const ProductThumbnail = styled.img`
 
 /* PRODUCT DATA */
 export const DataContainer = styled.div`
-    padding-right: 20%;
     margin-top: 10%;
+    width: 450px;
+    margin-left: 100px;
 `
 
 export const BrandName = styled.p`
@@ -47,6 +49,7 @@ export const BrandName = styled.p`
 
 export const ProductTitle = styled.h1`
     font-family: ${({ theme }) => theme.fontFamily.bold};
+    font-size: 38px;
 `
 
 export const ProductDescription = styled.p`

@@ -21,7 +21,7 @@ export const ProductScreen: React.FC = () => {
             </ProductImageContainer>
             <DataContainer>
                 <BrandName>SNEAKER COMPANY</BrandName>
-                <ProductTitle>FALL LIMITED EDITION SNEAKERS</ProductTitle>
+                <ProductTitle>Fall Limited Edition Sneakers</ProductTitle>
                 <ProductDescription>
                     These low-profile sneakers are your perfect  casual wear companion.
                     Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
