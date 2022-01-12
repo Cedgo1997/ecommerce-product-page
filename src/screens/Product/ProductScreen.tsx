@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { currencyFormat } from '../../helpers/currencyFormat';
 import { AddButton, BrandName, ButtonsContainer, CurrentPrice, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
 
 export const ProductScreen: React.FC = () => {
@@ -43,10 +44,10 @@ export const ProductScreen: React.FC = () => {
 
                 <PriceContainer>
                     <CurrentPrice>
-                        <Price>{productData.price * productData.quantity}</Price>
+                        <Price>{currencyFormat(productData.price * productData.quantity)}</Price>
                         <DiscountBadge>50%</DiscountBadge>
                     </CurrentPrice>
-                    <PreviousPrice>{(productData.price * 2)*productData.quantity}</PreviousPrice>
+                    <PreviousPrice>{currencyFormat((productData.price * 2)*productData.quantity)}</PreviousPrice>
                 </PriceContainer>
 
                 <ButtonsContainer>
