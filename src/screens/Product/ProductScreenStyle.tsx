@@ -7,9 +7,11 @@ export const ProductContainer = styled.div`
     margin-top: 5%;
     width: 100%;
     justify-content: center;
-
+    
     @media (max-width: 1150px) {
         flex-direction: column;
+        align-items: center;
+        margin-bottom: 5%;
     }
 `
 
@@ -49,6 +51,11 @@ export const DataContainer = styled.div`
     margin-top: 10%;
     width: 450px;
     margin-left: 100px;
+    @media (max-width: 1150px) {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const BrandName = styled.p`
