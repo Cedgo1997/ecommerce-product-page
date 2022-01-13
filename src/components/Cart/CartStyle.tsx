@@ -113,3 +113,30 @@ export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
     </OrderText>
   </OrderContainer>
 );
+
+const Button = styled.button`
+    align-self: center; 
+    background-color: ${({ theme }) => theme.colors.primary.dark};
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 5px 15px 0px ${({ theme }) => theme.colors.primary.dark};
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 20px;
+    &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+    }
+    & > p {
+        color: white;
+        font-family: ${({ theme }) => theme.fontFamily.bold};
+        margin: 10px 0 10px 0;
+    }
+`
+
+export const CheckoutButton = ({ text }: any) => (
+  <Button>
+    <p>{text}</p>
+  </Button>
+)

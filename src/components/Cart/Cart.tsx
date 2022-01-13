@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../../context/productContext'
-import { CartContainer, NoOrders, Order, Title } from './CartStyle'
+import { CartContainer, CheckoutButton, NoOrders, Order, Title } from './CartStyle'
 
 interface CartInterface {
     showCart: boolean;
@@ -27,6 +27,7 @@ export const Cart: React.FC<CartInterface> = ({ showCart }) => {
                         />
                     ))
             }
+            <CheckoutButton text='Checkout' />
         </CartContainer>
     )
 }
