@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import { Cart } from '../Cart/Cart'
 import { CartButton, CloseButton, LogoContainer, MainLogo, MenuButton, Nav, NavItem, NavItems, ProfileButton, ProfileContainer, StyledLink } from './NavbarStyle'
 
@@ -6,16 +7,17 @@ export const Navbar: React.FC = () => {
 
     const [showCart, setShowCart] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const { width } = useWindowDimensions();
 
     return (
         <Nav showMenu={showMenu}>
             {showCart && (<Cart />)}
-            <MenuButton onClick={() => setShowMenu(!showMenu)} />
+            { width <= 1150 && <MenuButton onClick={() => setShowMenu(!showMenu)} />}
             <LogoContainer>
                 <MainLogo />
             </LogoContainer>
             <NavItems showMenu={showMenu}>
-                {showMenu && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
+                { width <= 1150 && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
                 <NavItem>
                     <StyledLink to="/collections" >Collections</StyledLink>
                 </NavItem>
