@@ -11,13 +11,13 @@ export const Navbar: React.FC = () => {
 
     return (
         <Nav showMenu={showMenu}>
-            {showCart && (<Cart />)}
-            { width <= 1150 && <MenuButton onClick={() => setShowMenu(!showMenu)} />}
+            <Cart showCart={showCart} />
+            {width <= 1150 && <MenuButton onClick={() => setShowMenu(!showMenu)} />}
             <LogoContainer>
                 <MainLogo />
             </LogoContainer>
             <NavItems showMenu={showMenu}>
-                { width <= 1150 && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
+                {width <= 1150 && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
                 <NavItem>
                     <StyledLink to="/collections" >Collections</StyledLink>
                 </NavItem>

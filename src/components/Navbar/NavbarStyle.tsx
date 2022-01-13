@@ -15,7 +15,7 @@ interface NavItemsInterface {
 }
 
 
-const fadeIn = keyframes`
+const slideIn = keyframes`
   from {
     transform: translateX(-100%);
     opacity: 0;
@@ -27,7 +27,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const fadeOut = keyframes`
+const slideOut = keyframes`
   from {
     transform: translateX(0);
     opacity: 1;
@@ -84,7 +84,7 @@ export const NavItems = styled.ul<NavItemsInterface>`
         z-index: 1;
 
         visibility: ${props => props.showMenu ? 'visible' : 'hidden'};
-        animation: ${props => props.showMenu ? fadeIn : fadeOut} 0.2s linear;
+        animation: ${props => props.showMenu ? slideIn : slideOut} 0.2s linear;
         transition: visibility 0.2s linear;
 
         & > :first-child {
