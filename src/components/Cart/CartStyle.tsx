@@ -1,8 +1,16 @@
+import React from 'react';
 import styled, { keyframes } from "styled-components";
+import { currencyFormat } from '../../helpers/currencyFormat';
 
 interface Cart {
   showCart: boolean;
-}
+};
+
+interface OrderProps {
+  name: string;
+  price: number;
+  quantity: number;
+};
 
 const fadeIn = keyframes`
   from {
@@ -56,7 +64,39 @@ export const NoOrders = styled.div`
     & > p {
         font-size: ${({ theme }) => theme.fontSize.small};
         font-family: ${({ theme }) => theme.fontFamily.bold};
-        margin-top: 60px;
+        margin-top: 50px;
         opacity: 0.8;
     }
 `
+
+const OrderContainer = styled.div`
+    padding: 10px;
+
+`
+
+const OrderImage = styled.div`
+
+`
+
+const OrderText = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const OrderName = styled.p`
+    font-size: ${({ theme }) => theme.fontSize.small};
+    font-family: ${({ theme }) => theme.fontFamily.normal};
+`
+
+const OrderPrice = styled.p`
+`
+
+export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
+  <OrderContainer>
+    <OrderImage><img src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt={name} /></OrderImage>
+    <OrderText>
+      <OrderName>{name}</OrderName>
+      <OrderPrice>{currencyFormat(price)} x {quantity} <strong>{currencyFormat(price * quantity)}</strong></OrderPrice>
+    </OrderText>
+  </OrderContainer>
+);
