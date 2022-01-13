@@ -15,7 +15,6 @@ export const ProductContainer = styled.div`
     }
 `
 
-
 export const ProductImageContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -25,12 +24,19 @@ export const ProductImageContainer = styled.div`
 export const LargeImageContainer = styled.div`
     width: 450px;
     height: 460px;
+    @media (max-width: 500px) {
+        width: 100vw;
+        height: auto;
+    }
 `
 
 export const Image = styled.img`
     max-width: 100%;
     max-height: 100%;
     border-radius: 5%;
+    @media (max-width: 500px) {
+        border-radius: 0;
+    }
 `
 
 export const ProductThumbnailContainer = styled.div`
@@ -51,10 +57,15 @@ export const DataContainer = styled.div`
     margin-top: 10%;
     width: 450px;
     margin-left: 100px;
+    
     @media (max-width: 1150px) {
         margin-left: 0;
         display: flex;
         flex-direction: column;
+    }
+
+    @media (max-width: 500px) {
+        width: 90%;
     }
 `
 

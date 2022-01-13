@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { currencyFormat } from '../../helpers/currencyFormat';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import { AddButton, BrandName, ButtonsContainer, CurrentPrice, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
 
 export const ProductScreen: React.FC = () => {
@@ -11,6 +12,8 @@ export const ProductScreen: React.FC = () => {
         price: 125.00,
         quantity
     });
+
+    const { width } = useWindowDimensions();
 
     useEffect(() => {
         setProductData((state) => {
@@ -27,12 +30,12 @@ export const ProductScreen: React.FC = () => {
                 <LargeImageContainer>
                     <Image src={require('./../../assets/images/image-product-1.jpg')} alt="product 1" />
                 </LargeImageContainer>
-                <ProductThumbnailContainer>
+                {width >= 500 && <ProductThumbnailContainer>
                     <ProductThumbnail src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt="product 1" />
                     <ProductThumbnail src={require('./../../assets/images/image-product-2-thumbnail.jpg')} alt="product 2" />
                     <ProductThumbnail src={require('./../../assets/images/image-product-3-thumbnail.jpg')} alt="product 3" />
                     <ProductThumbnail src={require('./../../assets/images/image-product-4-thumbnail.jpg')} alt="product 4" />
-                </ProductThumbnailContainer>
+                </ProductThumbnailContainer>}
             </ProductImageContainer>
             <DataContainer>
                 <BrandName>SNEAKER COMPANY</BrandName>
@@ -47,7 +50,7 @@ export const ProductScreen: React.FC = () => {
                         <Price>{currencyFormat(productData.price * productData.quantity)}</Price>
                         <DiscountBadge>50%</DiscountBadge>
                     </CurrentPrice>
-                    <PreviousPrice>{currencyFormat((productData.price * 2)*productData.quantity)}</PreviousPrice>
+                    <PreviousPrice>{currencyFormat((productData.price * 2) * productData.quantity)}</PreviousPrice>
                 </PriceContainer>
 
                 <ButtonsContainer>
