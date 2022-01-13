@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from './../../assets/logo/logo.svg';
 import { ReactComponent as CartLogo } from './../../assets/icons/icon-cart.svg';
 import { ReactComponent as MenuLogo } from './../../assets/icons/icon-menu.svg';
 import { ReactComponent as CloseLogo } from './../../assets/icons/icon-close.svg';
+
+
 interface NavInterface {
     showMenu: boolean;
 }
@@ -12,6 +14,30 @@ interface NavItemsInterface {
     showMenu: boolean;
 }
 
+
+const fadeIn = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+`;
 
 export const Nav = styled.nav<NavInterface>`
     display: flex;
@@ -48,7 +74,6 @@ export const NavItems = styled.ul<NavItemsInterface>`
     display: flex;
     @media (max-width: 1150px) {
         background-color: white;
-        display: ${(props) => props.showMenu ? 'flex' : 'none'};
         flex-direction: column;
         height: 100%;
         left: 0;
@@ -57,6 +82,11 @@ export const NavItems = styled.ul<NavItemsInterface>`
         width: 60%;
         margin: 0;
         z-index: 1;
+
+        visibility: ${props => props.showMenu ? 'visible' : 'hidden'};
+        animation: ${props => props.showMenu ? fadeIn : fadeOut} 0.2s linear;
+        transition: visibility 0.2s linear;
+
         & > :first-child {
             align-self: flex-start;
             padding: 25px 0 25px 0;
