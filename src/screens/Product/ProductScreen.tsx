@@ -25,7 +25,7 @@ export const ProductScreen: React.FC = () => {
         })
     }, [quantity]);
 
-    const { addProduct } = useContext(ProductContext)
+    const { addProduct } = useContext(ProductContext);
 
     return (
         <ProductContainer>

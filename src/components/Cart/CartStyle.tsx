@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 interface Cart {
-    showCart: boolean;
+  showCart: boolean;
 }
 
 const fadeIn = keyframes`
@@ -46,11 +46,11 @@ export const CartContainer = styled.div<Cart>`
 `
 
 export const Title = styled.h5`
-    margin-left: 20px;
+    padding: 0 0 15px 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 `
 
 export const NoOrders = styled.div`
-    border-top: 1px solid rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
     & > p {
