@@ -11,6 +11,10 @@ export const CartContainer = styled.div`
     top: 60px;
     width: 300px;
     min-height: 220px;
+
+    @media (max-width: 500px) {
+        width: 80%;
+    }
 `
 
 export const Title = styled.h5`
