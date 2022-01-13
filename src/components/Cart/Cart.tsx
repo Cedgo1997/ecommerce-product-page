@@ -18,16 +18,18 @@ export const Cart: React.FC<CartInterface> = ({ showCart }) => {
                     ? (<NoOrders>
                         <p>Your cart is empty</p>
                     </NoOrders>)
-                    : products.map(({ name, price, quantity }, index) => (
-                        <Order
-                            key={index + 1}
-                            name={name}
-                            price={price}
-                            quantity={quantity}
-                        />
-                    ))
+                    : <>
+                        {products.map(({ name, price, quantity }, index) => (
+                            <Order
+                                key={index + 1}
+                                name={name}
+                                price={price}
+                                quantity={quantity}
+                            />
+                        ))}
+                        <CheckoutButton text='Checkout' />
+                    </>
             }
-            <CheckoutButton text='Checkout' />
         </CartContainer>
     )
 }

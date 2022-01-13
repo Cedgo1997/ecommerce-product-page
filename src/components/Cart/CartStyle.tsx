@@ -119,7 +119,6 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 5px;
     border: none;
-    box-shadow: 0px 5px 15px 0px ${({ theme }) => theme.colors.primary.dark};
     display: flex;
     justify-content: center;
     width: 90%;
