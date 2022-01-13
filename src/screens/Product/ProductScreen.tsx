@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { ProductContext } from '../../context/productContext';
 import { currencyFormat } from '../../helpers/currencyFormat';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import { AddButton, BrandName, ButtonsContainer, CurrentPrice, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
@@ -23,6 +24,8 @@ export const ProductScreen: React.FC = () => {
             }
         })
     }, [quantity]);
+
+    const { addProduct } = useContext(ProductContext)
 
     return (
         <ProductContainer>
@@ -59,7 +62,7 @@ export const ProductScreen: React.FC = () => {
                         <p className="number">{quantity}</p>
                         <Sign text='+' onClick={() => setQuantity(quantity + 1)} />
                     </QuantityButton>
-                    <AddButton text='Add to cart' />
+                    <AddButton text='Add to cart' onClick={() => addProduct(productData)} />
                 </ButtonsContainer>
             </DataContainer>
         </ProductContainer>
