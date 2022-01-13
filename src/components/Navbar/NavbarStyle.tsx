@@ -17,12 +17,6 @@ export const Nav = styled.nav<NavInterface>`
     display: flex;
     height: 65px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
-    
-    @media (min-width: 1150px) {
-        & > Button {
-            display: none;
-        }
-    }
 
     @media (max-width: 1150px) {
         height: 50px;
@@ -74,6 +68,7 @@ export const NavItem = styled.li`
     list-style: none;
     margin-right: 25px;
     height: 48px;
+    border: none;
     &:hover {
         border-bottom: 3px solid ${({ theme }) => theme.colors.primary.dark};
     }
