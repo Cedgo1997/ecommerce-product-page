@@ -1,9 +1,13 @@
 import React from 'react'
 import { CartContainer, NoOrders, Title } from './CartStyle'
 
-export const Cart: React.FC = () => {
+interface CartInterface {
+    showCart: boolean;
+}
+
+export const Cart: React.FC<CartInterface> = ({ showCart }) => {
     return (
-        <CartContainer>
+        <CartContainer showCart={showCart}>
             <Title>Cart</Title>
             <NoOrders>
                 <p>Your cart is empty</p>

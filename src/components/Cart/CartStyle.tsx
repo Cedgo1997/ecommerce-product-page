@@ -1,6 +1,30 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const CartContainer = styled.div`
+interface Cart {
+    showCart: boolean;
+}
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+`;
+
+export const CartContainer = styled.div<Cart>`
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -11,6 +35,10 @@ export const CartContainer = styled.div`
     top: 60px;
     width: 300px;
     min-height: 220px;
+
+    visibility: ${props => props.showCart ? 'visible' : 'hidden'};
+    animation: ${props => props.showCart ? fadeIn : fadeOut} 0.3s linear;
+    transition: visibility 0.3s linear;
 
     @media (max-width: 500px) {
         width: 80%;
@@ -26,8 +54,8 @@ export const NoOrders = styled.div`
     display: flex;
     justify-content: center;
     & > p {
-        font-size: ${({theme}) => theme.fontSize.small};
-        font-family: ${({theme}) => theme.fontFamily.bold};
+        font-size: ${({ theme }) => theme.fontSize.small};
+        font-family: ${({ theme }) => theme.fontFamily.bold};
         margin-top: 60px;
         opacity: 0.8;
     }
