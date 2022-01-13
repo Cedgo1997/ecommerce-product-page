@@ -70,17 +70,27 @@ export const NoOrders = styled.div`
 `
 
 const OrderContainer = styled.div`
-    padding: 10px;
-
+    display: flex;    
+    padding: 10px 10px 10px 20px;
 `
 
-const OrderImage = styled.div`
+const OrderImageContainer = styled.div`
+    width: 40px;
+    height: 40px;
+`
 
+const OrderImage = styled.img`
+    height: 100%;
+    border-radius: 10%;
 `
 
 const OrderText = styled.div`
     display: flex;
     flex-direction: column;
+    & > p {
+      margin: 0 0 5px 10px;
+      color: rgba(0,0,0,0.6)
+    }
 `
 
 const OrderName = styled.p`
@@ -89,11 +99,14 @@ const OrderName = styled.p`
 `
 
 const OrderPrice = styled.p`
+    & > strong {
+      color: rgb(0,0,0);
+    }
 `
 
 export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
   <OrderContainer>
-    <OrderImage><img src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt={name} /></OrderImage>
+    <OrderImageContainer><OrderImage src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt={name} /></OrderImageContainer>
     <OrderText>
       <OrderName>{name}</OrderName>
       <OrderPrice>{currencyFormat(price)} x {quantity} <strong>{currencyFormat(price * quantity)}</strong></OrderPrice>
