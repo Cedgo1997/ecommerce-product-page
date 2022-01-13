@@ -161,8 +161,8 @@ export const CartIcon = styled(CartLogo)`
     padding-right: 2%;
 `
 
-export const AddButton = ({ text }: any) => (
-    <Button>
+export const AddButton = ({ text, onClick }: any) => (
+    <Button onClick={onClick}>
         <CartIcon />
         <p>{text}</p>
     </Button>
