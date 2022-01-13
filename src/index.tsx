@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import { MainTheme } from './theme/appTheme';
 import { AppRouter } from './router/AppRouter';
 import { BrowserRouter } from 'react-router-dom';
+import { ProductProvider } from './context/productContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <MainTheme>
-      <BrowserRouter>
-        <AppRouter />
-      </BrowserRouter>
+      <ProductProvider>
+        <BrowserRouter>
+          <AppRouter />
+        </BrowserRouter>
+      </ProductProvider>
     </MainTheme>
   </React.StrictMode>,
   document.getElementById('root')
