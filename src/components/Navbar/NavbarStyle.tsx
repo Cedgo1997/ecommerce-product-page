@@ -4,47 +4,68 @@ import { ReactComponent as Logo } from './../../assets/logo/logo.svg';
 import { ReactComponent as CartLogo } from './../../assets/icons/icon-cart.svg';
 import { ReactComponent as MenuLogo } from './../../assets/icons/icon-menu.svg';
 import { ReactComponent as CloseLogo } from './../../assets/icons/icon-close.svg';
-
-interface NavItems {
+interface NavInterface {
     showMenu: boolean;
 }
 
-export const Nav = styled.nav`
+interface NavItemsInterface {
+    showMenu: boolean;
+}
+
+
+export const Nav = styled.nav<NavInterface>`
     display: flex;
     height: 65px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
-
+    
     @media (min-width: 1150px) {
         & > Button {
             display: none;
         }
     }
+
+    @media (max-width: 1150px) {
+        height: 50px;
+        border: none;
+        &::before {
+            content: '';
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: ${(props) => props.showMenu && '100%'};
+            height: ${(props) => props.showMenu && '100%'};
+            background-color: black;
+            opacity: 0.5;
+        }
+    }
+
 `
 
 /* Nav logo */
 export const LogoContainer = styled.div`
-    margin-top: 15px;
+    padding-top: 12px;
 `
 
 export const MainLogo = styled(Logo)`
-    margin-top: 5px;
 `
 
 /* Nav links */
-export const NavItems = styled.ul<NavItems>`
+export const NavItems = styled.ul<NavItemsInterface>`
     display: flex;
-
     @media (max-width: 1150px) {
-        display: ${(props) => props.showMenu ? 'flex' : 'none'};
-        position: absolute;
-        flex-direction: column;
         background-color: white;
-        width: 60%;
+        display: ${(props) => props.showMenu ? 'flex' : 'none'};
+        flex-direction: column;
         height: 100%;
         left: 0;
+        top: 0;
+        position: fixed;
+        width: 60%;
+        margin: 0;
+        z-index: 1;
         & > :first-child {
             align-self: flex-start;
-            margin: 25px 0 25px 0;
+            padding: 25px 0 25px 0;
         }
     }
 `

@@ -8,14 +8,14 @@ export const Navbar: React.FC = () => {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <Nav>
+        <Nav showMenu={showMenu}>
             {showCart && (<Cart />)}
             <MenuButton onClick={() => setShowMenu(!showMenu)} />
             <LogoContainer>
                 <MainLogo />
             </LogoContainer>
             <NavItems showMenu={showMenu}>
-                <CloseButton onClick={() => setShowMenu(!showMenu)} />
+                {showMenu && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
                 <NavItem>
                     <StyledLink to="/collections" >Collections</StyledLink>
                 </NavItem>
