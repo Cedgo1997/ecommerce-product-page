@@ -22,8 +22,8 @@ export const ProductImageContainer = styled.div`
 `
 
 export const LargeImageContainer = styled.div`
-    width: 450px;
-    height: 460px;
+    width: 380px;
+    height: 390px;
     @media (max-width: 500px) {
         width: 100vw;
         height: auto;
@@ -42,19 +42,19 @@ export const Image = styled.img`
 export const ProductThumbnailContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 450px;
+    width: 380px;
 `
 
 export const ProductThumbnail = styled.img`
     border-radius: 10%;
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
     margin-top: 3%;
 `
 
 /* PRODUCT DATA */
 export const DataContainer = styled.div`
-    margin-top: 10%;
+    margin-top: 5%;
     width: 450px;
     margin-left: 100px;
     
