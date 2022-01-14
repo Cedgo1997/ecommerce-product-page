@@ -168,6 +168,7 @@ const Notification = styled.div`
         color: white;
         font-family: ${({ theme }) => theme.fontFamily.bold};
         font-size: 8px;
+        margin: 0;
     }
 `;
 
