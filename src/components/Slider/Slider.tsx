@@ -9,6 +9,8 @@ export const Slider: React.FC = () => {
 
     const [image, setImage] = useState(images[0].path);
 
+    const [isActive, setIsActive] = useState(0);
+
     return (
         <ProductImageContainer>
             {width >= 500 &&
@@ -18,7 +20,22 @@ export const Slider: React.FC = () => {
                     </LargeImageContainer>
                     <ProductThumbnailContainer>
                         {
-                            images.map((image, index) => <ProductThumbnail src={image.thumbnail} alt={image.alt} key={index} onClick={() => setImage(image.path)} />)
+                            images
+                                .map(
+                                    (image, index) => (
+                                        <ProductThumbnail
+                                            key={index}
+                                            active={isActive === index}
+                                            onClick={() => {
+                                                setImage(image.path);
+                                                setIsActive(index);
+                                            }}>
+                                            <img
+                                                src={image.thumbnail}
+                                                alt={image.alt}
+                                            />
+                                        </ProductThumbnail>
+                                    ))
                         }
                     </ProductThumbnailContainer>
                 </>
