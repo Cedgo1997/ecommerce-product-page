@@ -6,12 +6,16 @@ import { ReactComponent as MenuLogo } from './../../assets/icons/icon-menu.svg';
 import { ReactComponent as CloseLogo } from './../../assets/icons/icon-close.svg';
 
 
-interface NavInterface {
+interface NavProps {
     showMenu: boolean;
 }
 
-interface NavItemsInterface {
+interface NavItemsProps {
     showMenu: boolean;
+}
+
+interface ButtonProps {
+    highlight?: boolean;
 }
 
 
@@ -39,7 +43,7 @@ const slideOut = keyframes`
   }
 `;
 
-export const Nav = styled.nav<NavInterface>`
+export const Nav = styled.nav<NavProps>`
     display: flex;
     height: 65px;
     border-bottom: 2px solid rgba(0,0,0,0.1);
@@ -70,7 +74,7 @@ export const MainLogo = styled(Logo)`
 `
 
 /* Nav links */
-export const NavItems = styled.ul<NavItemsInterface>`
+export const NavItems = styled.ul<NavItemsProps>`
     display: flex;
     @media (max-width: 1150px) {
         background-color: white;
@@ -133,11 +137,11 @@ export const ProfileContainer = styled.div`
     justify-content: center;
 `
 
-const Button = styled.button`
+const Button = styled.button<ButtonProps>`
     background: none;
     border: none;
     margin-right: 25px;
-    opacity: 0.5;
+    opacity: ${(props) => props.highlight ? 1 : 0.5};
     &:hover {
         opacity: 1;
         cursor: pointer;
@@ -152,8 +156,29 @@ export const ProfileButton = styled.img`
     }
 `
 
-export const CartButton = ({ onClick }: any) => (
-    <Button onClick={onClick}><CartLogo /></Button>
+const Notification = styled.div`
+    border-radius: 40%;
+    background-color: ${({ theme }) => theme.colors.primary.dark};
+    width: 15px;
+    height: 10px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+    & > p {
+        color: white;
+        font-family: ${({ theme }) => theme.fontFamily.bold};
+        font-size: 8px;
+    }
+`;
+
+export const CartButton = ({ onClick, quantity }: any) => (
+    <Button highlight={!!quantity} onClick={onClick}>
+        {!!quantity &&
+            (<Notification>
+                <p>{quantity}</p>
+            </Notification>)}
+        <CartLogo />
+    </Button>
 );
 
 export const MenuButton = ({ onClick }: any) => (
