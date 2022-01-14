@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Slider } from '../../components/Slider/Slider';
 import { ProductContext } from '../../context/productContext';
 import { currencyFormat } from '../../helpers/currencyFormat';
 import {
@@ -42,7 +43,7 @@ export const ProductScreen: React.FC = () => {
 
     return (
         <ProductContainer>
-
+            <Slider />
             <DataContainer>
                 <BrandName>SNEAKER COMPANY</BrandName>
                 <ProductTitle>{productData.name}</ProductTitle>
