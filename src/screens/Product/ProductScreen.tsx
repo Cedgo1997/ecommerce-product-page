@@ -1,8 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ProductContext } from '../../context/productContext';
 import { currencyFormat } from '../../helpers/currencyFormat';
-import { useWindowDimensions } from '../../hooks/useWindowDimensions';
-import { AddButton, BrandName, ButtonsContainer, CurrentPrice, DataContainer, DiscountBadge, Image, LargeImageContainer, PreviousPrice, Price, PriceContainer, ProductContainer, ProductDescription, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, ProductTitle, QuantityButton, Sign } from './ProductScreenStyle'
+import {
+    AddButton,
+    BrandName,
+    ButtonsContainer,
+    CurrentPrice,
+    DataContainer,
+    DiscountBadge,
+    PreviousPrice,
+    Price,
+    PriceContainer,
+    ProductContainer,
+    ProductDescription,
+    ProductTitle,
+    QuantityButton,
+    Sign
+} from './ProductScreenStyle'
 
 export const ProductScreen: React.FC = () => {
 
@@ -14,7 +28,6 @@ export const ProductScreen: React.FC = () => {
         quantity
     });
 
-    const { width } = useWindowDimensions();
 
     useEffect(() => {
         setProductData((state) => {
@@ -29,17 +42,7 @@ export const ProductScreen: React.FC = () => {
 
     return (
         <ProductContainer>
-            <ProductImageContainer>
-                <LargeImageContainer>
-                    <Image src={require('./../../assets/images/image-product-1.jpg')} alt="product 1" />
-                </LargeImageContainer>
-                {width >= 500 && <ProductThumbnailContainer>
-                    <ProductThumbnail src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt="product 1" />
-                    <ProductThumbnail src={require('./../../assets/images/image-product-2-thumbnail.jpg')} alt="product 2" />
-                    <ProductThumbnail src={require('./../../assets/images/image-product-3-thumbnail.jpg')} alt="product 3" />
-                    <ProductThumbnail src={require('./../../assets/images/image-product-4-thumbnail.jpg')} alt="product 4" />
-                </ProductThumbnailContainer>}
-            </ProductImageContainer>
+
             <DataContainer>
                 <BrandName>SNEAKER COMPANY</BrandName>
                 <ProductTitle>{productData.name}</ProductTitle>
