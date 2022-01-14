@@ -43,11 +43,12 @@ export const CartContainer = styled.div<Cart>`
     top: 60px;
     width: 300px;
     min-height: 220px;
-
+    max-height: 350px;
+    z-index: 2;
     visibility: ${props => props.showCart ? 'visible' : 'hidden'};
     animation: ${props => props.showCart ? fadeIn : fadeOut} 0.3s linear;
     transition: visibility 0.3s linear;
-
+    overflow-y: scroll;
     @media (max-width: 500px) {
         width: 80%;
     }
