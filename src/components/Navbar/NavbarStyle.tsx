@@ -145,7 +145,8 @@ const Button = styled.button<ButtonProps>`
     &:hover {
         opacity: 1;
         cursor: pointer;
-    }
+    };
+
 `
 
 export const ProfileButton = styled.img`
@@ -157,13 +158,14 @@ export const ProfileButton = styled.img`
 `
 
 const Notification = styled.div`
-    border-radius: 40%;
     background-color: ${({ theme }) => theme.colors.primary.dark};
+    border-radius: 40%;
+    display: flex;
     width: 15px;
     height: 10px;
-    position: relative;
-    left: 10px;
-    top: 5px;
+    justify-content: center;
+    position: absolute;
+    margin-left: 10px;
     & > p {
         color: white;
         font-family: ${({ theme }) => theme.fontFamily.bold};
@@ -171,6 +173,7 @@ const Notification = styled.div`
         margin: 0;
     }
 `;
+
 
 export const CartButton = ({ onClick, quantity }: any) => (
     <Button highlight={!!quantity} onClick={onClick}>
