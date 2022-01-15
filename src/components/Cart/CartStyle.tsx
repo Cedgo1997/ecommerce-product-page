@@ -11,6 +11,8 @@ interface OrderProps {
   name: string;
   price: number;
   quantity: number;
+  deleteOrder: any;
+  index: number
 };
 
 const fadeIn = keyframes`
@@ -118,21 +120,17 @@ const Button = styled.button`
   }
 `;
 
-const DeleteButton = () => (
-  <Button>
-    <DeleteLogo />
-  </Button>
-);
 
-
-export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
+export const Order: React.FC<OrderProps> = ({ name, price, quantity, deleteOrder, index }) => (
   <OrderContainer>
     <OrderImageContainer><OrderImage src={require('./../../assets/images/image-product-1-thumbnail.jpg')} alt={name} /></OrderImageContainer>
     <OrderText>
       <OrderName>{name}</OrderName>
       <OrderPrice>{currencyFormat(price)} x {quantity} <strong>{currencyFormat(price * quantity)}</strong></OrderPrice>
     </OrderText>
-    <DeleteButton/>
+    <Button onClick={() => deleteOrder(index)}>
+      <DeleteLogo />
+    </Button>
   </OrderContainer>
 );
 
