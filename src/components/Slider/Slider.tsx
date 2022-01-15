@@ -14,7 +14,7 @@ export const Slider: React.FC = () => {
     return (
         <ProductImageContainer>
             {
-                showModal && <Modal setShowModal={setShowModal} index={isActive} />
+                showModal && <Modal setShowModal={setShowModal} image={image} />
             }
             {width >= 500 &&
                 <>
