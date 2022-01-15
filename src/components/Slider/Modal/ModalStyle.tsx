@@ -1,6 +1,8 @@
 import styled, { useTheme } from "styled-components";
 import { LargeImageContainer, Image, ProductThumbnailContainer, ProductThumbnail } from "../SliderStyle";
 import { ReactComponent as CloseLogo } from './../../../assets/icons/icon-close.svg';
+import { ReactComponent as PreviousLogo } from './../../../assets/icons/icon-previous.svg';
+import { ReactComponent as NextLogo } from './../../../assets/icons/icon-next.svg';
 
 export const ModalContainer = styled.div`
     position: absolute;
@@ -23,12 +25,12 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ModalImageContainer = styled(LargeImageContainer)`
-    width: 390px;
+display: flex;
+justify-content: center;    
+width: 390px;
 `;
 
-export const ModalImage = styled(Image)`
-
-`;
+export const ModalImage = styled(Image)``;
 
 export const ModalThumbnailContainer = styled(ProductThumbnailContainer)`
     display: flex;
@@ -41,6 +43,15 @@ export const ModalThumbnail = styled(ProductThumbnail)`
     z-index: 2;
 `;
 
+const ButtonsContainer = styled.div`
+    display: flex;
+    position: absolute;
+    width: 420px;
+    height: 390px;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 const Button = styled.button`
     align-self: flex-end;
     background: none;
@@ -51,10 +62,46 @@ const Button = styled.button`
         cursor: pointer;
     };
 `
-export const CloseModal = ({ onClick }: any) => {
 
+const RoundedButton = styled.button`
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    & > .previous {
+        margin-right: 5px;
+    };
+    & > .next {
+        margin-left: 2px;
+    }
+    & > .icon {
+        stroke: black;
+    };
+    &:hover {
+        cursor: pointer;
+        & > .icon {
+            stroke: ${({theme}) => theme.colors.primary.dark};
+        }
+    }
+`;
+
+export const CloseModal = ({ onClick }: any) => {
     const theme = useTheme();
     return (
-        <Button onClick={onClick}><CloseLogo fill={theme.colors.primary.dark} /></Button>
+        <Button onClick={onClick}>
+            <CloseLogo fill={theme.colors.primary.dark} />
+        </Button>
     )
 };
+
+export const SliderButton = () => (
+    <ButtonsContainer>
+        <RoundedButton>
+            <PreviousLogo className="previous icon" />
+        </RoundedButton>
+        <RoundedButton>
+            <NextLogo className="next icon" />
+        </RoundedButton>
+    </ButtonsContainer>
+);

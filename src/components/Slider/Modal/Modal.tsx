@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { images } from '../images'
-import { CloseModal, ImageWrapper, ModalContainer, ModalImage, ModalImageContainer, ModalThumbnail, ModalThumbnailContainer } from './ModalStyle'
+import { CloseModal, ImageWrapper, ModalContainer, ModalImage, ModalImageContainer, ModalThumbnail, ModalThumbnailContainer, SliderButton } from './ModalStyle'
 
 interface ModalProps {
     setShowModal: Function;
@@ -18,6 +18,7 @@ export const Modal: React.FC<ModalProps> = ({ setShowModal, firstActive }) => {
                 <ImageWrapper>
                     <CloseModal onClick={() => setShowModal(false)} />
                     <ModalImageContainer>
+                        <SliderButton />
                         <ModalImage src={image} alt={images[0].alt} />
                     </ModalImageContainer>
                     <ModalThumbnailContainer>
