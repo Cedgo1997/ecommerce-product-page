@@ -12,13 +12,27 @@ export const Modal: React.FC<ModalProps> = ({ setShowModal, firstActive }) => {
     const [image, setImage] = useState(images[firstActive].path);
     const [isActive, setIsActive] = useState(firstActive);
 
+    const nextImage = () => {
+        if (isActive != 3) {
+            setIsActive(isActive + 1);
+            setImage(images[isActive + 1].path);
+        }
+    };
+    const previousImage = () => {
+        if (isActive != 0) {
+            setIsActive(isActive - 1);
+            setImage(images[isActive - 1].path);
+        }
+    };
+
+
     return (
         <>
             <ModalContainer>
                 <ImageWrapper>
                     <CloseModal onClick={() => setShowModal(false)} />
                     <ModalImageContainer>
-                        <SliderButton />
+                        <SliderButton next={nextImage} previous={previousImage} />
                         <ModalImage src={image} alt={images[0].alt} />
                     </ModalImageContainer>
                     <ModalThumbnailContainer>

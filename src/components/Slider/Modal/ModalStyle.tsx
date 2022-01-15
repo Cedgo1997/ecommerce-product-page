@@ -81,7 +81,7 @@ const RoundedButton = styled.button`
     &:hover {
         cursor: pointer;
         & > .icon {
-            stroke: ${({theme}) => theme.colors.primary.dark};
+            stroke: ${({ theme }) => theme.colors.primary.dark};
         }
     }
 `;
@@ -95,12 +95,12 @@ export const CloseModal = ({ onClick }: any) => {
     )
 };
 
-export const SliderButton = () => (
+export const SliderButton = ({ next, previous }: any) => (
     <ButtonsContainer>
-        <RoundedButton>
+        <RoundedButton onClick={previous}>
             <PreviousLogo className="previous icon" />
         </RoundedButton>
-        <RoundedButton>
+        <RoundedButton onClick={next}>
             <NextLogo className="next icon" />
         </RoundedButton>
     </ButtonsContainer>
