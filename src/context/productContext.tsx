@@ -3,6 +3,7 @@ import { Product } from '../interfaces/product';
 
 interface ProductContextProps {
     addProduct: Function;
+    deleteProduct: Function;
     products: Product[]
 }
 
@@ -23,10 +24,17 @@ export const ProductProvider: React.FC = ({ children }) => {
         });
     };
 
+    const deleteProduct = (index: number) => {
+        setProducts((state) => {
+            return [...state.slice(0, index), ...state.slice(index + 1,)];
+        })
+    }
+
     return (
         <ProductContext.Provider value={{
             products,
-            addProduct
+            addProduct,
+            deleteProduct
         }}>
             {children}
         </ProductContext.Provider>
