@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from "styled-components";
 import { currencyFormat } from '../../helpers/currencyFormat';
+import { ReactComponent as DeleteLogo } from './../../assets/icons/icon-delete.svg';
 
 interface Cart {
   showCart: boolean;
@@ -41,7 +42,7 @@ export const CartContainer = styled.div<Cart>`
     position: absolute;
     right: 40px;
     top: 60px;
-    width: 300px;
+    width: 320px;
     min-height: 220px;
     max-height: 350px;
     z-index: 2;
@@ -72,6 +73,7 @@ export const NoOrders = styled.div`
 
 const OrderContainer = styled.div`
     display: flex;    
+    justify-content: space-between;
     padding: 10px 10px 10px 20px;
 `
 
@@ -104,6 +106,24 @@ const OrderPrice = styled.p`
       color: rgb(0,0,0);
     }
 `
+const Button = styled.button`
+  background: none;
+  border: none;
+  opacity: 0.8;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+`;
+
+const DeleteButton = () => (
+  <Button>
+    <DeleteLogo />
+  </Button>
+);
+
 
 export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
   <OrderContainer>
@@ -112,10 +132,11 @@ export const Order: React.FC<OrderProps> = ({ name, price, quantity }) => (
       <OrderName>{name}</OrderName>
       <OrderPrice>{currencyFormat(price)} x {quantity} <strong>{currencyFormat(price * quantity)}</strong></OrderPrice>
     </OrderText>
+    <DeleteButton/>
   </OrderContainer>
 );
 
-const Button = styled.button`
+const LargeButton = styled.button`
     align-self: center; 
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 5px;
@@ -136,7 +157,7 @@ const Button = styled.button`
 `
 
 export const CheckoutButton = ({ text }: any) => (
-  <Button>
+  <LargeButton>
     <p>{text}</p>
-  </Button>
+  </LargeButton>
 )
