@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
-import { ProductsScreen } from "../screens/Products/ProductsScreen";
+import { ProductScreen } from "../screens/Product/ProductScreen";
 import { MainWrapper } from "./AppRouterStyle";
 
 export const AppRouter = () => {
@@ -9,12 +9,12 @@ export const AppRouter = () => {
         <MainWrapper>
             <Navbar />
             <Routes>
-                <Route path="/" element={<ProductsScreen />} />
-                <Route path="/collections" element={<ProductsScreen />} />
-                <Route path="/men" element={<ProductsScreen />} />
-                <Route path="/women" element={<ProductsScreen />} />
-                <Route path="/about" element={<ProductsScreen />} />
-                <Route path="/contact" element={<ProductsScreen />} />
+                <Route path="/" element={<ProductScreen />} />
+                <Route path="/collections" element={<ProductScreen />} />
+                <Route path="/men" element={<ProductScreen />} />
+                <Route path="/women" element={<ProductScreen />} />
+                <Route path="/about" element={<ProductScreen />} />
+                <Route path="/contact" element={<ProductScreen />} />
             </Routes>
         </MainWrapper>
     );

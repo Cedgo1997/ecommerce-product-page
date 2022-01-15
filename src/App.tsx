@@ -4,15 +4,22 @@ import { AppRouter } from './router/AppRouter';
 import { BrowserRouter } from 'react-router-dom';
 import { ProductProvider } from './context/productContext';
 
+const AppState: React.FC = ({ children }) => (
+  <ProductProvider>
+    {children}
+  </ProductProvider>
+
+);
+
 export const App = () => {
   return (
     <React.StrictMode>
       <MainTheme>
-        <ProductProvider>
+        <AppState>
           <BrowserRouter>
             <AppRouter />
           </BrowserRouter>
-        </ProductProvider>
+        </AppState>
       </MainTheme>
     </React.StrictMode>
   )
