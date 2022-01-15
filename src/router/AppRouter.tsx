@@ -9,12 +9,12 @@ export const AppRouter = () => {
         <MainWrapper>
             <Navbar />
             <Routes>
-                <Route path="/" element={<ProductScreen />} />
-                <Route path="/collections" element={<ProductScreen />} />
-                <Route path="/men" element={<ProductScreen />} />
-                <Route path="/women" element={<ProductScreen />} />
-                <Route path="/about" element={<ProductScreen />} />
-                <Route path="/contact" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/collections" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/men" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/women" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/about" element={<ProductScreen />} />
+                <Route path="/ecommerce-product-page/contact" element={<ProductScreen />} />
             </Routes>
         </MainWrapper>
     );

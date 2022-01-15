@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { HashRouter } from 'react-router-dom';
 import { ProductContext } from '../../context/productContext';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 import { Cart } from '../Cart/Cart'
@@ -21,19 +22,19 @@ export const Navbar: React.FC = () => {
             <NavItems showMenu={showMenu}>
                 {width <= 1150 && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
                 <NavItem>
-                    <StyledLink to="/collections" >Collections</StyledLink>
+                    <StyledLink to="/ecommerce-product-page/collections" >Collections</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/men" >Men</StyledLink>
+                    <StyledLink to="/ecommerce-product-page/men" >Men</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/women" >Women</StyledLink>
+                    <StyledLink to="/ecommerce-product-page/women" >Women</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/about" >About</StyledLink>
+                    <StyledLink to="/ecommerce-product-page/about" >About</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/contact" >Contact</StyledLink>
+                    <StyledLink to="/ecommerce-product-page/contact" >Contact</StyledLink>
                 </NavItem>
             </NavItems>
             <ProfileContainer>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { MainTheme } from './theme/appTheme';
 import { AppRouter } from './router/AppRouter';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { ProductProvider } from './context/productContext';
 
 const AppState: React.FC = ({ children }) => (
@@ -14,6 +14,7 @@ const AppState: React.FC = ({ children }) => (
 export const App = () => {
   return (
     <React.StrictMode>
+      <HashRouter basename='/ecommerce-product-page' />
       <MainTheme>
         <AppState>
           <BrowserRouter>
