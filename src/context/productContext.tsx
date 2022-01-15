@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Product } from '../interfaces/product';
+import { Product, ProductImage } from '../interfaces/product';
 
 interface ProductContextProps {
     addProduct: Function;
@@ -16,7 +16,7 @@ export const ProductProvider: React.FC = ({ children }) => {
 
     const addProduct = (product: Product) => {
 
-        setProducts((state) => {
+        setProducts((state: Product[]) => {
             return [
                 ...state,
                 product
@@ -25,7 +25,7 @@ export const ProductProvider: React.FC = ({ children }) => {
     };
 
     const deleteProduct = (index: number) => {
-        setProducts((state) => {
+        setProducts((state: Product[]) => {
             return [...state.slice(0, index), ...state.slice(index + 1,)];
         })
     }
