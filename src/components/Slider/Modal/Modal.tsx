@@ -10,8 +10,8 @@ interface ModalProps {
 
 export const Modal: React.FC<ModalProps> = ({ setShowModal, firstActive }) => {
 
-    const [image, setImage] = useState(images[firstActive].path);
-    const [isActive, setIsActive] = useState(firstActive);
+    const [image, setImage] = useState<string>(images[firstActive].path);
+    const [isActive, setIsActive] = useState<number>(firstActive);
 
     return (
         <>

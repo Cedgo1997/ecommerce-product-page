@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Slider } from '../../components/Slider/Slider';
 import { ProductContext } from '../../context/productContext';
 import { currencyFormat } from '../../helpers/currencyFormat';
+import { Product } from '../../interfaces/product';
 import {
     AddButton,
     BrandName,
@@ -21,9 +22,9 @@ import {
 
 export const ProductScreen: React.FC = () => {
 
-    const [quantity, setQuantity] = useState(1);
+    const [quantity, setQuantity] = useState<number>(1);
 
-    const [productData, setProductData] = useState({
+    const [productData, setProductData] = useState<Product>({
         name: 'Fall Limited Edition Sneakers',
         price: 125.00,
         quantity

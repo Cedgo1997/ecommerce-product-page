@@ -8,9 +8,9 @@ import { images } from './images';
 export const Slider: React.FC = () => {
 
     const { width } = useWindowDimensions();
-    const [image, setImage] = useState(images[0].path);
-    const [isActive, setIsActive] = useState(0);
-    const [showModal, setShowModal] = useState(false);
+    const [image, setImage] = useState<string>(images[0].path);
+    const [isActive, setIsActive] = useState<number>(0);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     return (
         <ProductImageContainer>

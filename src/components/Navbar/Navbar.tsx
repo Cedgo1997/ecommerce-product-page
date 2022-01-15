@@ -6,8 +6,8 @@ import { CartButton, CloseButton, LogoContainer, MainLogo, MenuButton, Nav, NavI
 
 export const Navbar: React.FC = () => {
 
-    const [showCart, setShowCart] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
+    const [showCart, setShowCart] = useState<boolean>(false);
+    const [showMenu, setShowMenu] = useState<boolean>(false);
     const { width } = useWindowDimensions();
     const { products } = useContext(ProductContext);
 

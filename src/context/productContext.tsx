@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-
-
-interface Product {
-    name: string,
-    price: number,
-    quantity: number
-}
+import { Product } from '../interfaces/product';
 
 interface ProductContextProps {
     addProduct: Function;
@@ -13,10 +7,9 @@ interface ProductContextProps {
 }
 
 
-
 export const ProductContext = React.createContext({} as ProductContextProps);
 
-export const ProductProvider = ({ children }: any) => {
+export const ProductProvider: React.FC = ({ children }) => {
 
     const [products, setProducts] = useState([] as Product[]);
 

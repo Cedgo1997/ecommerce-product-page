@@ -1,4 +1,6 @@
-export const images = [
+import { ProductImage } from "../../interfaces/product";
+
+export const images: ProductImage[] = [
     {
         path: require('./../../assets/images/image-product-1.jpg'),
         thumbnail: require('./../../assets/images/image-product-1-thumbnail.jpg'),
