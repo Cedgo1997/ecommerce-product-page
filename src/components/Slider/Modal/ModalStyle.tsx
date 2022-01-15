@@ -1,5 +1,5 @@
 import styled, { useTheme } from "styled-components";
-import { LargeImageContainer, Image, ProductThumbnailContainer, ProductThumbnail } from "../SliderStyle";
+import { LargeImageContainer, Image, ProductThumbnailContainer, ProductThumbnail, SliderRoundedButton } from "../SliderStyle";
 import { ReactComponent as CloseLogo } from './../../../assets/icons/icon-close.svg';
 import { ReactComponent as PreviousLogo } from './../../../assets/icons/icon-previous.svg';
 import { ReactComponent as NextLogo } from './../../../assets/icons/icon-next.svg';
@@ -63,27 +63,7 @@ const Button = styled.button`
     };
 `
 
-const RoundedButton = styled.button`
-    border: none;
-    border-radius: 50%;
-    background-color: white;
-    width: 40px;
-    height: 40px;
-    & > .previous {
-        margin-right: 5px;
-    };
-    & > .next {
-        margin-left: 2px;
-    }
-    & > .icon {
-        stroke: black;
-    };
-    &:hover {
-        cursor: pointer;
-        & > .icon {
-            stroke: ${({ theme }) => theme.colors.primary.dark};
-        }
-    }
+export const RoundedButton = styled(SliderRoundedButton)`
 `;
 
 export const CloseModal = ({ onClick }: any) => {
@@ -95,7 +75,7 @@ export const CloseModal = ({ onClick }: any) => {
     )
 };
 
-export const SliderButton = ({ next, previous }: any) => (
+export const ModalButtons = ({ next, previous }: any) => (
     <ButtonsContainer>
         <RoundedButton onClick={previous}>
             <PreviousLogo className="previous icon" />

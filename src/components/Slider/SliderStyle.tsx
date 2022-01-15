@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ReactComponent as PreviousLogo } from './../../assets/icons/icon-previous.svg';
+import { ReactComponent as NextLogo } from './../../assets/icons/icon-next.svg';
 
 interface ThumbnailsProps {
     active: boolean;
@@ -16,6 +18,9 @@ export const LargeImageContainer = styled.div`
     @media (max-width: 500px) {
         width: 100vw;
         height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `
 
@@ -52,3 +57,46 @@ export const ProductThumbnail = styled.div<ThumbnailsProps>`
     }
 
 `
+
+// Slider Button on mobile
+const ButtonsContainer = styled.div`
+    position: absolute;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const SliderRoundedButton = styled.button`
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    & > .previous {
+        margin-right: 5px;
+    };
+    & > .next {
+        margin-left: 2px;
+    }
+    & > .icon {
+        stroke: black;
+    };
+    &:hover {
+        cursor: pointer;
+        & > .icon {
+            stroke: ${({ theme }) => theme.colors.primary.dark};
+        }
+    }
+`;
+
+export const SliderButtons = ({ next, previous }: any) => (
+    <ButtonsContainer>
+        <SliderRoundedButton onClick={previous}>
+            <PreviousLogo className="previous icon" />
+        </SliderRoundedButton>
+        <SliderRoundedButton onClick={next}>
+            <NextLogo className="next icon" />
+        </SliderRoundedButton>
+    </ButtonsContainer>
+);
