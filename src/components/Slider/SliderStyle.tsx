@@ -39,8 +39,7 @@ export const ProductThumbnail = styled.div<ThumbnailsProps>`
     width: 75px;
     height: 75px;
     margin-top: 3%;
-    outline: ${(props) => props.active && `3px solid ${props.theme.colors.primary.dark}`};
-    
+    outline: ${(props) => props.active && `3px solid ${props.theme.colors.primary.dark}`};    
     & > img {
         border-radius: inherit;
         width: inherit;
@@ -48,6 +47,7 @@ export const ProductThumbnail = styled.div<ThumbnailsProps>`
         opacity: ${(props) => props.active && 0.5};
         &:hover{
             opacity: 0.8;
+            cursor: pointer;
         }
     }
 

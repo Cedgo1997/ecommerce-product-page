@@ -17,6 +17,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+    align-items: center;
     display: flex;
     flex-direction: column;
 `;
@@ -30,9 +31,14 @@ export const ModalImage = styled(Image)`
 `;
 
 export const ModalThumbnailContainer = styled(ProductThumbnailContainer)`
+    display: flex;
+    justify-content: space-around;
 `;
 
 export const ModalThumbnail = styled(ProductThumbnail)`
+    width: 65px;
+    height: 65px;
+    z-index: 2;
 `;
 
 const Button = styled.button`
