@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { LargeImageContainer, Image } from "../SliderStyle";
+import { ReactComponent as CloseLogo } from './../../../assets/icons/icon-close.svg';
 
 export const ModalContainer = styled.div`
     position: absolute;
@@ -11,8 +12,13 @@ export const ModalContainer = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
     z-index: 2;
+`;
+
+export const ImageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 export const ModalImageContainer = styled(LargeImageContainer)`
@@ -22,3 +28,21 @@ export const ModalImageContainer = styled(LargeImageContainer)`
 export const ModalImage = styled(Image)`
 
 `
+
+const Button = styled.button`
+    align-self: flex-end;
+    background: none;
+    border: none;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    };
+`
+export const CloseModal = ({ onClick }: any) => {
+
+    const theme = useTheme();
+    return (
+        <Button onClick={onClick}><CloseLogo fill={theme.colors.primary.dark} /></Button>
+    )
+};
