@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions';
-import { Image, LargeImageContainer, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer } from './SliderStyle'
-import { images } from './images';
+import { Image, LargeImageContainer, ProductImageContainer, ProductThumbnail, ProductThumbnailContainer, SliderButtons } from './SliderStyle'
+import { nextImage, previousImage } from '../../helpers/moveSlider';
 import { Modal } from './Modal/Modal';
-import { SliderButton } from './Modal/ModalStyle';
+import { images } from './images';
 
 export const Slider: React.FC = () => {
 
@@ -17,9 +17,18 @@ export const Slider: React.FC = () => {
             {
                 showModal && <Modal setShowModal={setShowModal} firstActive={isActive} />
             }
+
             <LargeImageContainer onClick={() => width >= 500 && setShowModal(true)}>
+                {
+                    width <= 500 && (
+                        <SliderButtons
+                            next={() => nextImage(isActive, setIsActive, setImage)}
+                            previous={() => previousImage(isActive, setIsActive, setImage)}
+                        />)
+                }
                 <Image src={image} alt="product 1" />
             </LargeImageContainer>
+
             {width >= 500 &&
                 <ProductThumbnailContainer>
                     {
