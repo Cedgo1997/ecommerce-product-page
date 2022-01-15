@@ -22,19 +22,19 @@ export const Navbar: React.FC = () => {
             <NavItems showMenu={showMenu}>
                 {width <= 1150 && (<CloseButton onClick={() => setShowMenu(!showMenu)} />)}
                 <NavItem>
-                    <StyledLink to="/ecommerce-product-page/collections" >Collections</StyledLink>
+                    <StyledLink to="#" >Collections</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/ecommerce-product-page/men" >Men</StyledLink>
+                    <StyledLink to="#" >Men</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/ecommerce-product-page/women" >Women</StyledLink>
+                    <StyledLink to="#" >Women</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/ecommerce-product-page/about" >About</StyledLink>
+                    <StyledLink to="#" >About</StyledLink>
                 </NavItem>
                 <NavItem>
-                    <StyledLink to="/ecommerce-product-page/contact" >Contact</StyledLink>
+                    <StyledLink to="#" >Contact</StyledLink>
                 </NavItem>
             </NavItems>
             <ProfileContainer>
