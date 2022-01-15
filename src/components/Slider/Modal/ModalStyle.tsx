@@ -1,5 +1,5 @@
 import styled, { useTheme } from "styled-components";
-import { LargeImageContainer, Image } from "../SliderStyle";
+import { LargeImageContainer, Image, ProductThumbnailContainer, ProductThumbnail } from "../SliderStyle";
 import { ReactComponent as CloseLogo } from './../../../assets/icons/icon-close.svg';
 
 export const ModalContainer = styled.div`
@@ -23,11 +23,17 @@ export const ImageWrapper = styled.div`
 
 export const ModalImageContainer = styled(LargeImageContainer)`
     width: 390px;
-`
+`;
 
 export const ModalImage = styled(Image)`
 
-`
+`;
+
+export const ModalThumbnailContainer = styled(ProductThumbnailContainer)`
+`;
+
+export const ModalThumbnail = styled(ProductThumbnail)`
+`;
 
 const Button = styled.button`
     align-self: flex-end;
