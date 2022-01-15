@@ -7,12 +7,12 @@ interface ModalProps {
     index: number;
 };
 
-export const Modal: React.FC<ModalProps> = () => {
+export const Modal: React.FC<ModalProps> = ({ setShowModal }) => {
     return (
         <>
             <ModalContainer>
                 <ImageWrapper>
-                    <CloseModal />
+                    <CloseModal onClick={() => setShowModal(false)} />
                     <ModalImageContainer>
                         <ModalImage src={images[0].path} alt={images[0].alt} />
                     </ModalImageContainer>
