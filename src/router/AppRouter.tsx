@@ -1,10 +1,6 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import { App } from "../App";
 import { Navbar } from "../components/Navbar/Navbar";
-import { AboutScreen } from "../screens/About/AboutScreen";
-import { ContactScreen } from "../screens/Contact/ContactScreen";
-import { ProductScreen } from "../screens/Product/ProductScreen";
 import { ProductsScreen } from "../screens/Products/ProductsScreen";
 import { MainWrapper } from "./AppRouterStyle";
 
@@ -13,12 +9,12 @@ export const AppRouter = () => {
         <MainWrapper>
             <Navbar />
             <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<ProductsScreen />} />
                 <Route path="/collections" element={<ProductsScreen />} />
-                <Route path="/men" element={<ProductScreen />} />
-                <Route path="/women" element={<ProductScreen />} />
-                <Route path="/about" element={<AboutScreen />} />
-                <Route path="/contact" element={<ContactScreen />} />
+                <Route path="/men" element={<ProductsScreen />} />
+                <Route path="/women" element={<ProductsScreen />} />
+                <Route path="/about" element={<ProductsScreen />} />
+                <Route path="/contact" element={<ProductsScreen />} />
             </Routes>
         </MainWrapper>
     );
