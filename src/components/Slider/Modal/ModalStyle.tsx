@@ -5,7 +5,7 @@ import { ReactComponent as PreviousLogo } from './../../../assets/icons/icon-pre
 import { ReactComponent as NextLogo } from './../../../assets/icons/icon-next.svg';
 
 export const ModalContainer = styled.div`
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
