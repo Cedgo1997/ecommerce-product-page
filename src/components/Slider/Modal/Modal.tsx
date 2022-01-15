@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { CloseModal, ImageWrapper, ModalContainer, ModalImage, ModalImageContainer, ModalThumbnail, ModalThumbnailContainer, ModalButtons } from './ModalStyle'
+import { nextImage, previousImage } from '../../../helpers/moveSlider';
 import { images } from '../images'
-import { CloseModal, ImageWrapper, ModalContainer, ModalImage, ModalImageContainer, ModalThumbnail, ModalThumbnailContainer, SliderButton } from './ModalStyle'
 
 interface ModalProps {
     setShowModal: Function;
@@ -12,27 +13,13 @@ export const Modal: React.FC<ModalProps> = ({ setShowModal, firstActive }) => {
     const [image, setImage] = useState(images[firstActive].path);
     const [isActive, setIsActive] = useState(firstActive);
 
-    const nextImage = () => {
-        if (isActive != 3) {
-            setIsActive(isActive + 1);
-            setImage(images[isActive + 1].path);
-        }
-    };
-    const previousImage = () => {
-        if (isActive != 0) {
-            setIsActive(isActive - 1);
-            setImage(images[isActive - 1].path);
-        }
-    };
-
-
     return (
         <>
             <ModalContainer>
                 <ImageWrapper>
                     <CloseModal onClick={() => setShowModal(false)} />
                     <ModalImageContainer>
-                        <SliderButton next={nextImage} previous={previousImage} />
+                        <ModalButtons next={() => nextImage(isActive, setIsActive, setImage)} previous={() => previousImage(isActive, setIsActive, setImage)} />
                         <ModalImage src={image} alt={images[0].alt} />
                     </ModalImageContainer>
                     <ModalThumbnailContainer>
