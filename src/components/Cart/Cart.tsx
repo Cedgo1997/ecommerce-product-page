@@ -8,7 +8,7 @@ interface CartInterface {
 
 export const Cart: React.FC<CartInterface> = ({ showCart }) => {
 
-    const { products } = useContext(ProductContext);
+    const { products, deleteProduct } = useContext(ProductContext);
 
     return (
         <CartContainer showCart={showCart}>
@@ -25,6 +25,8 @@ export const Cart: React.FC<CartInterface> = ({ showCart }) => {
                                 name={name}
                                 price={price}
                                 quantity={quantity}
+                                index={index}
+                                deleteOrder={deleteProduct}
                             />
                         ))}
                         <CheckoutButton text='Checkout' />
